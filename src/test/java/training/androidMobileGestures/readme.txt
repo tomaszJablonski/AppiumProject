@@ -1,0 +1,1 @@
+https://github.com/appium/appium-uiautomator2-driver/blob/master/docs/android-mobile-gestures.md

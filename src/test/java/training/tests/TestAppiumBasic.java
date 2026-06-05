@@ -22,6 +22,5 @@ public class TestAppiumBasic extends BaseTest {
 
         driver.findElement(AppiumBy.id("android:id/edit")).sendKeys("testWifi");
         driver.findElement(AppiumBy.id("android:id/button1")).click();
-
     }
 }
