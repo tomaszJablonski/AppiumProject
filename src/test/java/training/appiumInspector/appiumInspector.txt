@@ -1,0 +1,6 @@
+{
+  "appium:app": "D:\\1.TESTOWANIE\\3. Testowanie aplikacji na telefonie\\Kurs Udemy\\intellij\\Projekt1\\AppiumProject\\src\\test\\resources\\ApiDemos-debug.apk",
+  "appium:deviceName": "Pixel4a",
+  "platformName": "android",
+  "appium:automationName": "UIAutomator2"
+}
