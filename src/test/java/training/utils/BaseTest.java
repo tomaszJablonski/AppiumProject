@@ -6,12 +6,12 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import training.page.ViewPage;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -27,6 +27,8 @@ public class BaseTest {
 
     public AndroidDriver driver;
     public AppiumDriverLocalService service;
+
+    public ViewPage viewPage;
 
     @BeforeClass
     public void configureAppium() throws URISyntaxException, MalformedURLException {
@@ -48,27 +50,53 @@ public class BaseTest {
 
         driver = new AndroidDriver(new URI("http://127.0.0.1:4723/").toURL(), options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
+
+        viewPage = new ViewPage(driver);
     }
 
     public void longPressAction(WebElement element) {
         Assert.assertNotNull(((RemoteWebElement) element).getId());
         driver.executeScript("mobile: longClickGesture", ImmutableMap.of("elementId", ((RemoteWebElement) element).getId(),
-                "duration",2000));
+                "duration", 2000));
     }
 
-    public void scrollByGoogleEngine(String textInElement){
+    public void scrollByGoogleEngine(String textInElement) {
         driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + textInElement + "\"));"));
     }
 
     public void scrollToEndAction() {
-            boolean canScrollMore;
-            do {
-                canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("mobile: scrollGesture", ImmutableMap.of(
-                        "left", 100, "top", 100, "width", 200, "height", 200,
-                        "direction", "down",
-                        "percent", 1.0
-                ));
-            } while (canScrollMore);
+        boolean canScrollMore;
+        int maxScrolls = 10; // safety limit to prevent infinite loop
+        int scrollCount = 0;
+
+        do {
+            Object result = driver.executeScript("mobile: scrollGesture", ImmutableMap.of(
+                    "left", 100, "top", 100, "width", 200, "height", 200,
+                    "direction", "down",
+                    "percent", 1.0
+            ));
+            canScrollMore = (result instanceof Boolean) ? (Boolean) result : Boolean.FALSE;
+            scrollCount++;
+        } while (canScrollMore && scrollCount < maxScrolls);
+    }
+
+    public void swipeScreen(WebElement element, String direction) {
+        Assert.assertNotNull(((RemoteWebElement) element).getId());
+        //direction - up, down, left, right
+        driver.executeScript("mobile: swipeGesture", ImmutableMap.of(
+                "elementId", ((RemoteWebElement) element).getId(),
+                "direction", direction,
+                "percent", 0.10
+        ));
+    }
+
+    public void dragDrop(WebElement element, int endX, int endY) {
+        Assert.assertNotNull(((RemoteWebElement) element).getId());
+        driver.executeScript("mobile: dragGesture", ImmutableMap.of(
+                "elementId", ((RemoteWebElement) element).getId(),
+                "endX", endX,
+                "endY", endY
+        ));
     }
 
     @AfterClass
