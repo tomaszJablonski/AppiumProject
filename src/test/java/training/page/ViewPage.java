@@ -26,6 +26,27 @@ public class ViewPage extends BaseTest {
     @AndroidFindBy(id = "io.appium.android.apis:id/drag_result_text")
     public WebElement droppedText;
 
+    @AndroidFindBy(accessibility = "Expandable Lists")
+    protected WebElement expandedList;
+
+    @AndroidFindBy(accessibility = "1. Custom Adapter")
+    protected WebElement customAdapter;
+
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text=\"People Names\"]")
+    public WebElement peopleNames;
+
+    @AndroidFindBy(id = "android:id/title")
+    WebElement sampleMenu;
+
+    @AndroidFindBy(accessibility = "Gallery")
+    WebElement gallery;
+
+    @AndroidFindBy(accessibility = "1. Photos")
+    WebElement photos;
+
+    @AndroidFindBy(xpath = "//android.widget.ImageView [1]")
+    public WebElement firstPhotos;
+
     public void clickViews() {
         views.click();
     }
@@ -34,7 +55,32 @@ public class ViewPage extends BaseTest {
         dragAndDrop.click();
     }
 
+    public void clickExpandedList() {
+        expandedList.click();
+    }
+
+    public void clickCustomAdapter() {
+        customAdapter.click();
+    }
+
+    public void clickGallery() {
+        gallery.click();
+    }
+
+    public void clickPhotos() {
+        photos.click();
+    }
+
     public String getTextDropped() {
         return droppedText.getText();
     }
+
+    public String getSampleMenuText() {
+        return sampleMenu.getText();
+    }
+
+    public boolean isDisplayedSampleMenu() {
+        return sampleMenu.isDisplayed();
+    }
+
 }

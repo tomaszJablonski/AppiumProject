@@ -99,6 +99,10 @@ public class BaseTest {
         ));
     }
 
+    public String getAttribute(WebElement element) {
+        return element.getAttribute("focusable");
+    }
+
     @AfterClass
     public void tearDown() {
         //Close all drivers and services

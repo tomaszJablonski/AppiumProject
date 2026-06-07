@@ -1,7 +1,5 @@
 package training.tests;
 
-import io.appium.java_client.AppiumBy;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import training.utils.BaseTest;
 
@@ -11,15 +9,14 @@ public class TestSwipe extends BaseTest {
 
     @Test
     public void swipePositive() {
-        driver.findElement(AppiumBy.accessibilityId("Views")).click();
-        driver.findElement(AppiumBy.accessibilityId("Gallery")).click();
-        driver.findElement(AppiumBy.accessibilityId("1. Photos")).click();
-        WebElement firstImage = driver.findElement(AppiumBy.xpath("//android.widget.ImageView [1]"));
-        String focusableTrue = firstImage.getAttribute("focusable");
+        viewPage.clickViews();
+        viewPage.clickGallery();
+        viewPage.clickPhotos();
+        String focusableTrue = getAttribute(viewPage.firstPhotos);
         assertEquals(focusableTrue, "true");
         //Swipe - przesunięcie tak jak palcem po telefonie
-        swipeScreen(firstImage, "left");
-        String focusableFalse = firstImage.getAttribute("focusable");
+        swipeScreen(viewPage.firstPhotos, "left");
+        String focusableFalse = getAttribute(viewPage.firstPhotos);
         assertEquals(focusableFalse, "false");
     }
 }
