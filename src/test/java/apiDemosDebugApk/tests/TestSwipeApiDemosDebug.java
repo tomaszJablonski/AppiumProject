@@ -1,11 +1,11 @@
 package apiDemosDebugApk.tests;
 
 import org.testng.annotations.Test;
-import apiDemosDebugApk.utils.BaseTest;
+import apiDemosDebugApk.utils.ApiDemosDebugBaseTest;
 
 import static org.testng.Assert.assertEquals;
 
-public class TestSwipe extends BaseTest {
+public class TestSwipeApiDemosDebug extends ApiDemosDebugBaseTest {
 
     @Test
     public void swipePositive() {

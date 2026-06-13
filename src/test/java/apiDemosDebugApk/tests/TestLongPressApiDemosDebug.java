@@ -1,12 +1,12 @@
 package apiDemosDebugApk.tests;
 
 import org.testng.annotations.Test;
-import apiDemosDebugApk.utils.BaseTest;
+import apiDemosDebugApk.utils.ApiDemosDebugBaseTest;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class TestLongPress extends BaseTest {
+public class TestLongPressApiDemosDebug extends ApiDemosDebugBaseTest {
 
     @Test(testName = "Długie przytrzymanie przycisku tylko w aplikacjach mobilnych żeby zobaczyć popup")
     public void longHoldTheElementOnlyOnMobile() {

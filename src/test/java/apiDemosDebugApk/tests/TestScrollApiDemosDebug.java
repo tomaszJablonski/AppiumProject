@@ -1,9 +1,9 @@
 package apiDemosDebugApk.tests;
 
 import org.testng.annotations.Test;
-import apiDemosDebugApk.utils.BaseTest;
+import apiDemosDebugApk.utils.ApiDemosDebugBaseTest;
 
-public class TestScroll extends BaseTest {
+public class TestScrollApiDemosDebug extends ApiDemosDebugBaseTest {
 
     @Test(testName = "Przewijanie w aplikacji na androdzie - sposób pierwszy")
     public void scrollInApp() {

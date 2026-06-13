@@ -5,11 +5,11 @@ import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
 import org.openqa.selenium.DeviceRotation;
 import org.testng.annotations.Test;
-import apiDemosDebugApk.utils.BaseTest;
+import apiDemosDebugApk.utils.ApiDemosDebugBaseTest;
 
 import static org.testng.Assert.assertEquals;
 
-public class TestMiscellaneousInAppium extends BaseTest {
+public class TestMiscellaneousInAppiumApiDemosDebug extends ApiDemosDebugBaseTest {
 
     @Test
     public void miscellaneous() {

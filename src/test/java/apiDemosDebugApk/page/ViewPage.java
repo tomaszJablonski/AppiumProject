@@ -5,9 +5,9 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import apiDemosDebugApk.utils.BaseTest;
+import apiDemosDebugApk.utils.ApiDemosDebugBaseTest;
 
-public class ViewPage extends BaseTest {
+public class ViewPage extends ApiDemosDebugBaseTest {
 
     public ViewPage(AndroidDriver driver) {
         this.driver = driver;

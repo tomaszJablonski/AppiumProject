@@ -3,11 +3,11 @@ package apiDemosDebugApk.tests;
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
 import org.testng.annotations.Test;
-import apiDemosDebugApk.utils.BaseTest;
+import apiDemosDebugApk.utils.ApiDemosDebugBaseTest;
 
 import static org.testng.Assert.assertEquals;
 
-public class TestAppPackageAndActivity extends BaseTest {
+public class TestAppPackageAndActivityApiDemosDebug extends ApiDemosDebugBaseTest {
 
     @Test
     public void appPackageAndActivity() {

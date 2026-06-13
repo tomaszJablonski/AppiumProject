@@ -20,7 +20,7 @@ import java.net.URISyntaxException;
 import java.time.Duration;
 import java.util.Map;
 
-public class BaseTest {
+public class ApiDemosDebugBaseTest {
 
     //For android - Android Driver
     //For IOS - IOSDriver

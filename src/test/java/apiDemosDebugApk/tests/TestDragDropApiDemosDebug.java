@@ -1,11 +1,11 @@
 package apiDemosDebugApk.tests;
 
 import org.testng.annotations.Test;
-import apiDemosDebugApk.utils.BaseTest;
+import apiDemosDebugApk.utils.ApiDemosDebugBaseTest;
 
 import static org.testng.Assert.assertEquals;
 
-public class TestDragDrop extends BaseTest {
+public class TestDragDropApiDemosDebug extends ApiDemosDebugBaseTest {
 
     @Test
     public void dragDropPositive() {

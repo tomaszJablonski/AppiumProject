@@ -2,11 +2,11 @@ package apiDemosDebugApk.tests;
 
 import io.appium.java_client.AppiumBy;
 import org.testng.annotations.Test;
-import apiDemosDebugApk.utils.BaseTest;
+import apiDemosDebugApk.utils.ApiDemosDebugBaseTest;
 
 import static org.testng.Assert.assertEquals;
 
-public class TestAppiumBasic extends BaseTest {
+public class TestAppiumBasicApiDemosDebug extends ApiDemosDebugBaseTest {
 
     @Test
     public void wifiSettingsName() {
