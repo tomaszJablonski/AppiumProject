@@ -1,11 +1,11 @@
-package training.page;
+package apiDemosDebugApk.page;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import training.utils.BaseTest;
+import apiDemosDebugApk.utils.BaseTest;
 
 public class ViewPage extends BaseTest {
 

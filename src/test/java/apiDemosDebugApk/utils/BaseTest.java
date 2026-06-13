@@ -1,4 +1,4 @@
-package training.utils;
+package apiDemosDebugApk.utils;
 
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
@@ -11,7 +11,7 @@ import org.openqa.selenium.remote.RemoteWebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import training.page.ViewPage;
+import apiDemosDebugApk.page.ViewPage;
 
 import java.io.File;
 import java.net.MalformedURLException;

@@ -1,8 +1,8 @@
-package training.tests;
+package apiDemosDebugApk.tests;
 
 import io.appium.java_client.AppiumBy;
 import org.testng.annotations.Test;
-import training.utils.BaseTest;
+import apiDemosDebugApk.utils.BaseTest;
 
 import static org.testng.Assert.assertEquals;
 

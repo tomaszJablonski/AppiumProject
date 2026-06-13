@@ -1,7 +1,7 @@
-package training.tests;
+package apiDemosDebugApk.tests;
 
 import org.testng.annotations.Test;
-import training.utils.BaseTest;
+import apiDemosDebugApk.utils.BaseTest;
 
 public class TestScroll extends BaseTest {
 

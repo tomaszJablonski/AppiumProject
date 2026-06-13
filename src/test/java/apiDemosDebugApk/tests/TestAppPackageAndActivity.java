@@ -1,9 +1,9 @@
-package training.tests;
+package apiDemosDebugApk.tests;
 
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.AppiumBy;
 import org.testng.annotations.Test;
-import training.utils.BaseTest;
+import apiDemosDebugApk.utils.BaseTest;
 
 import static org.testng.Assert.assertEquals;
 
@@ -15,7 +15,7 @@ public class TestAppPackageAndActivity extends BaseTest {
         //Po co tego używamy? Żeby nie klikać po całej aplikacji
         // tylko znaleźć się od razu w jej punkcie na start tam gdzie chcemy testować
         //jak nie musimy przechodzić przez cała aplikacje
-        //1.adb devices in cmd - powinien byćtam wpis o aktywności użądzenia emulacji
+        //1.adb devices in cmd - powinien być tam wpis o aktywności użądzenia emulacji
         //2.W Android studio na emulatorze ustawiamy ekran który chcemy przechwycić
         //3.W cmd potem wpisujemy - adb shell dumpsys window | find "mCurrentFocus"
         //i dostajemy taki wynik np. io.appium.android.apis/io.appium.android.apis.preference.PreferenceDependencies

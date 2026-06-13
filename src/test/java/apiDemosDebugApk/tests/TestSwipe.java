@@ -1,7 +1,7 @@
-package training.tests;
+package apiDemosDebugApk.tests;
 
 import org.testng.annotations.Test;
-import training.utils.BaseTest;
+import apiDemosDebugApk.utils.BaseTest;
 
 import static org.testng.Assert.assertEquals;
 

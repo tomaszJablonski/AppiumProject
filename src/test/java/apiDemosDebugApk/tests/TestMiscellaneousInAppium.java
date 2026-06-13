@@ -1,11 +1,11 @@
-package training.tests;
+package apiDemosDebugApk.tests;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.nativekey.AndroidKey;
 import io.appium.java_client.android.nativekey.KeyEvent;
 import org.openqa.selenium.DeviceRotation;
 import org.testng.annotations.Test;
-import training.utils.BaseTest;
+import apiDemosDebugApk.utils.BaseTest;
 
 import static org.testng.Assert.assertEquals;
 
