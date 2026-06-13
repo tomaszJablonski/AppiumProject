@@ -58,43 +58,12 @@ public class GeneralStoreBaseTest {
         driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + textInElement + "\"));"));
     }
 
-    public void scrollToEndAction() {
-        boolean canScrollMore;
-        int maxScrolls = 10; // safety limit to prevent infinite loop
-        int scrollCount = 0;
-
-        do {
-            Object result = driver.executeScript("mobile: scrollGesture", ImmutableMap.of(
-                    "left", 100, "top", 100, "width", 200, "height", 200,
-                    "direction", "down",
-                    "percent", 1.0
-            ));
-            canScrollMore = (result instanceof Boolean) ? (Boolean) result : Boolean.FALSE;
-            scrollCount++;
-        } while (canScrollMore && scrollCount < maxScrolls);
-    }
-
-    public void swipeScreen(WebElement element, String direction) {
-        Assert.assertNotNull(((RemoteWebElement) element).getId());
-        //direction - up, down, left, right
-        driver.executeScript("mobile: swipeGesture", ImmutableMap.of(
-                "elementId", ((RemoteWebElement) element).getId(),
-                "direction", direction,
-                "percent", 0.10
-        ));
-    }
-
-    public void dragDrop(WebElement element, int endX, int endY) {
-        Assert.assertNotNull(((RemoteWebElement) element).getId());
-        driver.executeScript("mobile: dragGesture", ImmutableMap.of(
-                "elementId", ((RemoteWebElement) element).getId(),
-                "endX", endX,
-                "endY", endY
-        ));
-    }
-
     public String getAttribute(WebElement element) {
         return element.getAttribute("focusable");
+    }
+
+    public Double getFormattedAmount(String amount) {
+        return Double.parseDouble(amount.substring(1));
     }
 
     @AfterClass
