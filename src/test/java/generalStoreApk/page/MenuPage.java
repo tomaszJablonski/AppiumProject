@@ -31,8 +31,11 @@ public class MenuPage extends GeneralStoreBaseTest {
     @AndroidFindBy(id = "com.androidsample.generalstore:id/btnLetsShop")
     WebElement letsChopButton;
 
-    @AndroidFindBy(id = "com.androidsample.generalstore:id/toolbar_title")
+    @AndroidFindBy(xpath = "//android.widget.TextView[@text='Products']")
     WebElement productsTab;
+
+    @AndroidFindBy(xpath = "(//android.widget.Toast)[1]")
+    WebElement loginToast;
 
     public void clickFirstCart() throws InterruptedException {
         firstCart.click();
@@ -57,5 +60,9 @@ public class MenuPage extends GeneralStoreBaseTest {
 
     public boolean isProductsTabVisible() {
         return productsTab.isDisplayed();
+    }
+
+    public String getTextLoginToast() {
+        return loginToast.getAttribute("name");
     }
 }
