@@ -7,12 +7,17 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
+import static java.lang.Thread.sleep;
+
 public class MenuPage extends GeneralStoreBaseTest {
 
     public MenuPage(AndroidDriver driver) {
         this.driver = driver;
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
+
+    @AndroidFindBy(id = "com.androidsample.generalstore:id/splashscreen")
+    WebElement firstCart;
 
     @AndroidFindBy(id = "com.androidsample.generalstore:id/spinnerCountry")
     WebElement chooseCountry;
@@ -26,15 +31,20 @@ public class MenuPage extends GeneralStoreBaseTest {
     @AndroidFindBy(id = "com.androidsample.generalstore:id/btnLetsShop")
     WebElement letsChopButton;
 
-    @AndroidFindBy(xpath = "//android.widget.TextView[text()='Products']")
+    @AndroidFindBy(id = "com.androidsample.generalstore:id/toolbar_title")
     WebElement productsTab;
+
+    public void clickFirstCart() throws InterruptedException {
+        firstCart.click();
+        sleep(3000);
+    }
 
     public void clickChooseCountry() {
         chooseCountry.click();
     }
 
     public void clickCountryChina() {
-        countryChina.click();;
+        countryChina.click();
     }
 
     public void sendKeysYourName(String name) {
